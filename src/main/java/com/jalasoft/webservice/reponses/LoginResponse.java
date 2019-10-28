@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) 2019 Jalasoft.
+ *
+ *   This software is the confidential and proprietary information of Jalasoft.
+ *    ("Confidential Information"). You shall not  disclose such Confidential Information and shall use it only in
+ *   accordance with the terms of the license agreement you entered into  with Jalasoft.
+ */
+
+package com.jalasoft.webservice.reponses;
+
+/**
+ * @author Veronica Prado on 10/27/2019
+ * @package com.jalasoft.webservice.reponses
+ */
+public class LoginResponse extends Response {
+    private String token;
+
+    /**
+     * Response Constructor
+     *
+     * @param name   Status in String Format.
+     * @param status Status in Numeric Format.
+     * @param detail Message String.
+     */
+    public LoginResponse(String name, Integer status, String detail, String token) {
+        super(name, status, detail);
+        this.token = token;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+}
