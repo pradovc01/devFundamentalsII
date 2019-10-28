@@ -26,6 +26,13 @@ public class TestCase {
     public TestCase(){
 
     }
+
+    /***
+     * Constructor
+     * @param title
+     * @param description
+     * @param steps
+     */
     public TestCase(String title, String description, String steps){
         super();
         this.id = null;
@@ -34,38 +41,74 @@ public class TestCase {
         this.steps = steps;
     }
 
+    /***
+     * Get Id
+     * @return
+     */
     public Integer getId() {
         return id;
     }
 
+    /**
+     * Set Id
+     * @param id
+     */
     public void setId(Integer id) {
         this.id = id;
     }
 
+    /***
+     * Get Title
+     * @return
+     */
     public String getTitle() {
         return title;
     }
 
+    /***
+     * Set Title
+     * @param title
+     */
     public void setTitle(String title) {
         this.title = title;
     }
 
+    /**
+     * Get Description
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /***
+     * Set Description
+     * @param description
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /***
+     * Get Steps
+     * @return
+     */
     public String getSteps() {
         return steps;
     }
 
+    /***
+     * Set Steps
+     * @param steps
+     */
     public void setSteps(String steps) {
         this.steps = steps;
     }
 
+    /***
+     * Override toString method
+     * @return
+     */
     @Override
     public String toString(){
         return String.format("TestCase{id= %s, title='%s', description='%s', steps='%s'}",
