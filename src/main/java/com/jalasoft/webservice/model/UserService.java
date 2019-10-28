@@ -27,12 +27,20 @@ public class UserService {
 
     public Optional<User> getUser(Integer id) {return userRepository.findById(id);}
 
+    /***
+     * Get all users
+     * @return
+     */
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         userRepository.findAll().forEach(users::add);
         return users;
     }
 
+    /***
+     * Add new user in database
+     * @param user
+     */
     public void addUser(User user){ userRepository.save(user);}
 
     public User getUserByUserName(String userName){ return userRepository.findByUserName(userName);}

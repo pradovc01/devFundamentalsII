@@ -26,20 +26,40 @@ public class TestCaseService {
     @Autowired //dependency inyection
     TestCaseRepository testCaseRepository;
 
+    /***
+     * Get test case by Id in database
+     * @param id
+     * @return
+     */
     public Optional<TestCase> getTestCase(Integer id){
         return testCaseRepository.findById(id);
     }
 
+    /***
+     * Get test case by Title
+     * @param title
+     * @return
+     */
     public TestCase getTestCaseByTitle(String title){
         return testCaseRepository.findByTitle(title);
     }
 
+    /***
+     * Get Test cases
+     * @return
+     */
     public List<TestCase> getAllTestCases(){
         List<TestCase> testcases = new ArrayList<>();
         testCaseRepository.findAll().forEach(testcases::add);
         return testcases;
     }
 
+    /***
+     * Update a test case
+     * @param testCase
+     * @param id
+     * @return
+     */
     public TestCase updateTestCase(TestCase testCase, Integer id){
         TestCase currentTestCase =  testCaseRepository.findById(id).orElse(null);
         if(currentTestCase != null){
@@ -52,6 +72,10 @@ public class TestCaseService {
         return currentTestCase;
     }
 
+    /***
+     * Delete a Testcase
+     * @param id
+     */
     public void deleteTestCase(Integer id){
         TestCase currentTestCase =  testCaseRepository.findById(id).orElse(null);
         if(currentTestCase != null){
@@ -59,10 +83,19 @@ public class TestCaseService {
         }
     }
 
+    /***
+     * Get test Case, if test case doesn't exist return null
+      * @param id
+     * @return
+     */
     public TestCase getOneTestCaseById(Integer id){
         return testCaseRepository.findById(id).orElse(null);
     }
 
+    /***
+     * Add new TestCase
+     * @param testcase
+     */
     public void addTestCase(TestCase testcase){
         testCaseRepository.save(testcase);
     }

@@ -30,27 +30,50 @@ public class Response {
         this.detail = detail;
     }
 
-
+    /**
+     * Get Name
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Set name
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Get status
+     * @return
+     */
     public Integer getStatus() {
         return status;
     }
 
+    /**
+     * Set status
+     * @param status
+     */
     public void setStatus(Integer status) {
         this.status = status;
     }
 
+    /***
+     * Get detail
+     * @return
+     */
     public String getDetail() {
         return detail;
     }
 
+    /**
+     * Set detail
+     * @param detail
+     */
     public void setDetail(String detail) {
         this.detail = detail;
     }

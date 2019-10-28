@@ -10,6 +10,9 @@ package com.jalasoft.webservice.entities;
 
 import javax.persistence.*;
 
+/***
+ * Class to manage information about TestCase
+ */
 @Entity
 @Table(name="TestCase")
 public class TestCase {

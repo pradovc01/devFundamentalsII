@@ -14,6 +14,7 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * @author Veronica Prado on 10/27/2019
  * @package com.jalasoft.webservice.model
+ * Class to use CrudRepository's methods
  */
 public interface UserRepository extends CrudRepository<User, Integer> {
     User findByUserName(String userName);

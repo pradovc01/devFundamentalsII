@@ -31,29 +31,53 @@ public class TestCaseController {
     @Autowired
     private TestCaseService testcase;
 
+    /***
+     * Rest EndPoint to get test case's information by Id
+     * @param testcaseId
+     * @return
+     */
     @GetMapping("/Id/{id:.+}")
     public TestCase getTestCase(@PathVariable("id") Integer testcaseId) {
         return testcase.getOneTestCaseById(testcaseId);
     }
 
+    /***
+     * Rest EndPoint to get all test cases added on database
+     * @return
+     */
     @GetMapping(value = "/testcases")
     public List<TestCase> getAllTestCases() {
         return testcase.getAllTestCases();
 
     }
 
+    /***
+     * Rest endPoint to add new test case in database
+     * @param testCase
+     * @return
+     */
     @PostMapping(value = "/testcase")
     public TestCase addTestCase(@RequestBody TestCase testCase) {
         testcase.addTestCase(testCase);
         return testcase.getTestCaseByTitle(testCase.getTitle());
     }
 
+    /***
+     * Rest endpoint to update a testcase
+     * @param testcaseToUpdate
+     * @param testcaseId
+     * @return
+     */
     @PutMapping(value = "/Id/{id:.+}")
     public TestCase updateTestCase(@RequestBody TestCase testcaseToUpdate, @PathVariable("id") Integer testcaseId) {
         TestCase updateTc = testcase.updateTestCase(testcaseToUpdate, testcaseId);
         return updateTc;
     }
 
+    /****
+     * Rest endpoint to delete a test case
+     * @param testcaseId
+     */
     @DeleteMapping(value = "/Id/{id:.+}")
     public void deleteTestCase(@PathVariable("id") Integer testcaseId) {
         testcase.deleteTestCase(testcaseId);
